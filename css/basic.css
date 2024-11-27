@@ -24,12 +24,17 @@ nav {
 }
 nav ul {
   display: none;
-  gap: 50px;
+  gap: 5vw;
 }
 nav ul li a {
   font-family: "Lilita One", sans-serif;
-  font-size: 36px;
+  font-size: calc(1vw + 20px);
   color: white;
+  text-shadow: 5px 6px 7px black;
+  padding: 10px;
+}
+nav ul li a:hover {
+  background: #000;
 }
 nav ul.slide-down {
   display: flex;
@@ -161,23 +166,26 @@ header,
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
+  align-items: center;
 }
 .project {
   position: relative;
-  margin: 30px 20px;
-  width: 40%;
+  margin: 20px;
   transform: translateX(-100px);
   opacity: 0;
   transition: 0.5s ease-in;
   cursor: pointer;
+  width: 40%;
+  height: 40%;
 }
 .project figure {
   overflow: hidden;
   width: 100%;
   height: 100%;
   border-radius: 10px;
+  background: rgba(255, 255, 255, 0.7);
 }
 .project figure img {
   width: 100%;
@@ -204,12 +212,15 @@ header,
   font-weight: 700;
 }
 .project .desc .text h2 {
-  font-size: 50px;
+  font-size: 3vw;
   text-shadow: 3px 4px 5px black;
   margin-bottom: 10px;
 }
 .project .desc .text {
   text-align: center;
+}
+.project .desc .text p {
+  font-size: 0.8vw;
 }
 .project .desc .text .p1 {
   display: none;
@@ -222,6 +233,7 @@ header,
 }
 
 .more {
+  font-size: 0.8vw;
   position: absolute;
   color: #fff;
   font-family: "Noto Sans KR", sans-serif;
@@ -269,8 +281,8 @@ header,
   z-index: 9999;
   left: 0;
   top: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   display: none;
   text-shadow: 3px 4px 5px black;
 }
@@ -279,7 +291,8 @@ header,
 }
 .modal figure {
   position: absolute;
-  width: 90%;
+  width: 90vw;
+  height: 90vh;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -319,18 +332,18 @@ header,
   font-size: 1px;
 }
 .modal .desc .text h2 {
-  font-size: 80px;
+  font-size: 5vw;
   padding-top: 30px;
   text-align: center;
 }
 .modal .desc .text .p1 {
-  font-size: 20px;
+  font-size: calc(0.4vw + 14px);
   text-align: center;
   margin-top: 30px;
 }
 .modal .desc .text .p2 {
   line-height: 2;
-  font-size: 16px;
+  font-size: calc(0.5vw + 6px);
 }
 
 .modal .desc .btns {
@@ -341,6 +354,7 @@ header,
   display: flex;
   justify-content: center;
   gap: 10px;
+  align-items: center;
 }
 .modal .desc .btns ul li {
   border: 5px solid #fff;
@@ -348,7 +362,9 @@ header,
   padding: 10px 0;
 }
 .modal .desc .btns ul li a {
-  padding: 20px;
+  padding: 1.5vw;
+  font-size: calc(0.3vw + 12px);
+  line-height: 20px;
 }
 
 .modalClose {
@@ -362,6 +378,11 @@ header,
   height: 50px;
 }
 /* sec3 */
+
+.sec03 {
+  position: relative;
+}
+
 .procon_wrap {
   display: flex;
   color: #fff;
@@ -370,16 +391,16 @@ header,
   font-weight: 700;
   gap: 10vw;
   justify-content: center;
+  margin: 30px;
 }
 .procon_wrap img {
-  width: 50px;
-  height: 50px;
+  width: calc(2vw + 24px);
 }
 .procon_wrap h2 {
-  font-size: 60px;
+  font-size: calc(2vw + 24px);
 }
 .procon_wrap p {
-  font-size: 32px;
+  font-size: calc(1vw + 12px);
   margin-left: 20px;
 }
 .skill_icon {
@@ -396,4 +417,81 @@ header,
 .profile li,
 .contact li {
   margin-top: 50px;
+}
+.footer p {
+  position: absolute;
+  text-align: center;
+  color: #fff;
+  font-family: "Noto Sans KR", sans-serif;
+  bottom: 20px;
+  width: 100%;
+}
+
+/* 반응형 */
+
+@media (max-width: 1023px) {
+  .navBtn {
+    width: 30px;
+    height: 30px;
+  }
+  .navBtn span {
+    background: rgba(255, 255, 255, 0.8);
+    width: 30px;
+    height: 4px;
+    position: absolute;
+    border-radius: 10px;
+    transition: 0.3s;
+  }
+  nav ul {
+    gap: 50px;
+  }
+  .modal .desc .text {
+    gap: 30px;
+  }
+  .modal .desc .btns {
+    margin-top: 30px;
+  }
+  .footer p {
+    font-size: 14px;
+  }
+}
+@media (max-width: 699px) {
+  nav ul.slide-down {
+    flex-direction: column;
+  }
+  nav ul {
+    gap: 30px;
+  }
+  .modal .desc .text {
+    flex-direction: column;
+  }
+  .modal .desc .text .text1 {
+    width: 100%;
+  }
+  .modal .desc .text .text2 {
+    text-align: center;
+    width: 100%;
+  }
+  .modal figure {
+    height: 80%;
+    width: 90%;
+    text-align: center;
+  }
+  .project {
+    margin: 10px;
+  }
+  .skill_icon {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+@media (max-width: 393px) {
+  .procon_wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 150px;
+  }
+  .footer p {
+    font-size: 10px;
+  }
 }
