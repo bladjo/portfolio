@@ -456,11 +456,11 @@ header,
   }
 }
 @media (max-width: 699px) {
-  nav ul.slide-down {
-    flex-direction: column;
+  nav {
   }
-  nav ul {
-    gap: 30px;
+
+  nav ul li {
+    text-align: center;
   }
   .modal .desc .text {
     flex-direction: column;
@@ -483,6 +483,21 @@ header,
   .skill_icon {
     display: flex;
     flex-wrap: wrap;
+  }
+}
+@media (max-width: 499px) {
+  nav ul.slide-down {
+    flex-direction: column;
+  }
+  nav ul {
+    gap: 30px;
+  }
+  .project {
+    height: 30%;
+    margin: auto;
+  }
+  .projects_wrap {
+    height: 90vh;
   }
 }
 @media (max-width: 393px) {
