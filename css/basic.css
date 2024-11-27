@@ -454,11 +454,12 @@ header,
   .footer p {
     font-size: 14px;
   }
+  .modalClose img {
+    width: 50px;
+    height: 50px;
+  }
 }
 @media (max-width: 699px) {
-  nav {
-  }
-
   nav ul li {
     text-align: center;
   }
@@ -484,6 +485,10 @@ header,
     display: flex;
     flex-wrap: wrap;
   }
+  .modalClose img {
+    width: 50px;
+    height: 50px;
+  }
 }
 @media (max-width: 499px) {
   nav ul.slide-down {
@@ -499,8 +504,13 @@ header,
   .projects_wrap {
     height: 90vh;
   }
-}
-@media (max-width: 393px) {
+  .modal {
+    width: 90vw;
+    height: 90vh;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
   .procon_wrap {
     display: flex;
     flex-direction: column;
@@ -509,4 +519,10 @@ header,
   .footer p {
     font-size: 10px;
   }
+  .modalClose img {
+    width: 50px;
+    height: 50px;
+  }
+}
+@media (max-width: 393px) {
 }
